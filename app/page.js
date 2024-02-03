@@ -1,6 +1,13 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import './globals.scss';
+import React from 'react';
+import Header from './header';
 
 export default function Home() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <div>
+        <Header />
+      </div>
+    </div>
+  );
 }
