@@ -5,8 +5,8 @@ import React from 'react';
 export default function Header() {
   return (
     <div>
-      <img src="/images/apples_hero.jpeg" alt="apples in basket" />
-      <h1 className="text-on-image">Welcome to the app store</h1>
+      <img src="/images/apple02.jpeg" alt="apples" />
+      <h1 className="text-on-image">hier kommt eine slideshow</h1>
     </div>
   );
 }
