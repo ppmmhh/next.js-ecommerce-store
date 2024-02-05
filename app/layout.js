@@ -15,6 +15,10 @@ export default function RootLayout({ children }) {
           <div>
             {/* <add Cookies /> */}
             <nav>
+              <a href="/">
+                <img src="./images/logo.png" alt="Logo" className="logo" />
+              </a>
+
               <Link href="/" className="navText">
                 Home
               </Link>
@@ -27,9 +31,6 @@ export default function RootLayout({ children }) {
                 About
               </Link>
 
-              <Link href="/contact" className="navText">
-                Contact
-              </Link>
               <div className="cart-icon">
                 <a href="/">
                   <img src="./images/shoppingcart.png" alt="shoppingcart" />
