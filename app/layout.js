@@ -1,7 +1,6 @@
 import './globals.scss';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import Link from 'next/link';
+import React from 'react';
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +10,42 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <header>
+          <div>
+            {/* <add Cookies /> */}
+            <nav>
+              <a href="/">
+                <img src="./images/logo.png" alt="Logo" className="logo" />
+              </a>
+
+              <Link href="/" className="navText">
+                Home
+              </Link>
+
+              <Link href="/workshops" className="navText">
+                Products
+              </Link>
+
+              <Link href="/about" className="navText">
+                About
+              </Link>
+
+              <Link href="/contact" className="navText">
+                Contact
+              </Link>
+              <div className="cart">
+                <a href="/">
+                  <img src="./images/shoppingcart.png" alt="shoppingcart" />
+                </a>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <main>{children}</main>
+
+        <footer>Hello Footer</footer>
+      </body>
     </html>
   );
 }
