@@ -1,7 +1,7 @@
 const apples = [
   {
     id: 1,
-    title: 'Baya Marisa',
+    name: 'Baya Marisa',
     origin: 'string',
     image: `/images/bayamarisa.jpeg`,
     price: 89,
@@ -17,7 +17,7 @@ const apples = [
   },
   {
     id: 2,
-    title: 'Kronprinz Rudol',
+    name: 'Kronprinz Rudol',
     origin: 'string',
     image: `/images/kronprinzrudolf.jpeg`,
     price: 89,
@@ -33,7 +33,7 @@ const apples = [
   },
   {
     id: 3,
-    title: 'Granny Smith',
+    name: 'Granny Smith',
     origin: 'string',
     image: `/images/grannysmith.jpeg`,
     price: 109,
@@ -49,7 +49,7 @@ const apples = [
   },
   {
     id: 4,
-    title: 'Pinova',
+    name: 'Pinova',
     origin: 'string',
     image: `/images/pinova.jpeg`,
     price: 39,
