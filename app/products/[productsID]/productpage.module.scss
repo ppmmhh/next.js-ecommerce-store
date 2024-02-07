@@ -1,0 +1,85 @@
+.sectionContainer {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 70px;
+  text-align: left;
+  width: 1140px;
+}
+
+@media screen and (min-width: 800px) {
+  .contentBoxGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1em;
+    align-content: left;
+    margin: 60px auto;
+  }
+  .description {
+    font-size: 1.2rem;
+    padding: 20px;
+    font-family: var(--font-family-text);
+    line-height: 120%;
+  }
+
+  .h1 {
+    font-size: 4rem;
+    font-family: var(--font-headline);
+    margin: auto;
+  }
+
+  .textHighlight {
+    font-size: 2rem;
+    padding: 20px;
+    line-height: 130%;
+    color: var(--secondary-color);
+    font-family: var(--font-family-text);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sectionContainer {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    text-align: left;
+    width: auto;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    font-family: var(--font-family-text);
+    line-height: 120%;
+    margin: 20px auto;
+  }
+  .h1 {
+    font-size: 2.5rem;
+    font-family: var(--font-headline);
+    margin: auto;
+  }
+  .textHighlight {
+    font-size: 1.5rem;
+    padding: 20px;
+    line-height: 130%;
+    color: var(--secondary-color);
+    font-family: var(--font-family-text);
+  }
+}
+
+.bookTicketWrapper {
+  margin: 20px;
+}
+
+.quantity {
+  font-family: var(--font-family-text);
+  margin-right: 20px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  border: 2px solid var(--color-button);
+  color: var(--color-button);
+
+  &:hover {
+    background-color: white;
+    cursor: pointer;
+    color: var(--color-button);
+  }
+}
