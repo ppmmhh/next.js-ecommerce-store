@@ -20,10 +20,15 @@ export default async function ProductsPage() {
               <div>{product.name}</div>
               <Image
                 src={`/images/${product.name.toLowerCase()}.jpeg`}
-                width={300}
+                width={200}
                 height={200}
                 alt={product.name}
               />
+              <div>
+                <h2>{product.name}</h2>
+              </div>
+              <div>{product.origin}</div>
+              <div data-test-id="product-price">{product.price}</div>
             </Link>
           </div>
         );
