@@ -4,7 +4,7 @@ import { getProduct } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import { styles } from './productpage.module.scss';
-import SetQuantityForm from './QuantityForm';
+import SetQuantityCounter from './QuantityCounter';
 
 export function generateMetadata(props) {
   const singleProduct = getProduct(Number(props.params.productID));
@@ -40,14 +40,13 @@ export default function ProductPage(props) {
           <div className={styles.textHighlight}>
             <div>Name: {singleProduct.name}</div>
             <div>Origin: {singleProduct.origin}</div>
-            <div>Price: {singleProduct.price}</div>
+            <div>Price: EUR {singleProduct.price}</div>
           </div>
-          <div className={styles.description}>{singleProduct.description}</div>
         </div>
         <div>
           <Image
             src={singleProduct.image}
-            width={250}
+            width={300}
             height={300}
             alt={singleProduct.title}
             data-test-id="product-image"
@@ -55,7 +54,7 @@ export default function ProductPage(props) {
         </div>
       </div>
       <div>{quantitiesToDisplay?.quantity}</div>
-      <SetQuantityForm productID={singleProduct.id} />
+      <SetQuantityCounter productID={singleProduct.id} />
     </div>
   );
 }
