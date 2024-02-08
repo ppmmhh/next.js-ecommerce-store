@@ -19,7 +19,7 @@ export default async function ProductsPage() {
             <Link href={`/apples/${product.id}`}>
               <div>{product.name}</div>
               <Image
-                src={`/images/${product.name.toLowerCase()}.jpeg`}
+                src={`/images/${product.name}.jpeg`}
                 width={200}
                 height={200}
                 alt={product.name}
