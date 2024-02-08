@@ -7,7 +7,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "migrate": "ley --require tsx/cjs"
   },
   "dependencies": {
     "@fontsource/lexend": "^5.0.18",
@@ -21,7 +22,8 @@
     "react-slideshow-image": "^4.3.0",
     "sass": "^1.70.0",
     "secure-json-parse": "^2.7.0",
-    "sharp": "^0.33.2"
+    "sharp": "^0.33.2",
+    "tsx": "^4.7.0"
   },
   "devDependencies": {
     "@ts-safeql/eslint-plugin": "^2.0.3",
@@ -34,6 +36,7 @@
     "prettier-plugin-sql": "^0.18.0",
     "stylelint": "^16.2.1",
     "stylelint-config-upleveled": "^1.0.7",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@types/dotenv-safe": "^8.1.5"
   }
 }
