@@ -4,8 +4,8 @@ const products = [
   {
     id: 1,
     name: 'Baya Marisa',
-    origin: 'string',
-    image: `/images/bayamarisa.jpeg`,
+    origin: 'Bavaria',
+    image: `/images/baya-marisa.jpeg`,
     price: 89,
     currency: '€',
     description: `
@@ -19,8 +19,8 @@ const products = [
   {
     id: 2,
     name: 'Kronprinz Rudolf',
-    origin: 'string',
-    image: `/images/kronprinzrudolf.jpeg`,
+    origin: 'Styria',
+    image: `/images/kronprinz-rudolf.jpeg`,
     price: 99,
     currency: '€',
     description: `
@@ -34,8 +34,8 @@ const products = [
   {
     id: 3,
     name: 'Granny Smith',
-    origin: 'string',
-    image: `/images/grannysmith.jpeg`,
+    origin: 'Burgenland',
+    image: `/images/granny-smith.jpeg`,
     price: 109,
     currency: '€',
     description: `
@@ -49,7 +49,7 @@ const products = [
   {
     id: 4,
     name: 'Pinova',
-    origin: 'string',
+    origin: 'South Tyrol',
     image: `/images/pinova.jpeg`,
     price: 39,
     currency: '€',
