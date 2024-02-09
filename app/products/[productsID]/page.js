@@ -1,10 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProduct } from '../../../database/products';
-import { parseJson } from '../../../util/json';
-import { getCookie } from '../../cookies/cookies';
 import { styles } from './productpage.module.scss';
-import SetQuantityCounter from './QuantityCounter';
 
 export function generateMetadata(props) {
   const singleProduct = getProduct(Number(props.params.productID));
@@ -20,17 +17,6 @@ export default function ProductPage(props) {
   if (!singleProduct) {
     notFound();
   }
-
-  // get cookie and parse it
-  const productsQuantityCookie = getCookie('quantityCookie');
-
-  const productsQuantity = !productsQuantityCookie
-    ? []
-    : parseJson(productsQuantityCookie);
-
-  const quantitiesToDisplay = productsQuantity.find((productQuantity) => {
-    return productQuantity.id === singleProduct.id;
-  });
 
   return (
     <div className={styles.sectionContainer}>
@@ -53,8 +39,6 @@ export default function ProductPage(props) {
           />
         </div>
       </div>
-      <div>{quantitiesToDisplay?.quantity}</div>
-      <SetQuantityCounter productID={singleProduct.id} />
     </div>
   );
 }
