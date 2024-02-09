@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProductsInsecure } from '../database/database';
+import { getProductsInsecure } from '../../database/database';
 
 export const metadata = {
   title: {

@@ -1,5 +1,5 @@
-import { getCookie } from '../../util/cookies.js';
-import SetCookieForm from './SetCookieForm.js';
+import { getCookie } from '../../util/cookies';
+import SetCookieForm from './SetCookieForm';
 
 export default function SetCookiePage() {
   const testCookieValue = getCookie('testCookie');

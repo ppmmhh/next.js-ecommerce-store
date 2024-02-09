@@ -12,10 +12,7 @@ export default function SetCookieForm() {
         value={cookieValue}
         onChange={(event) => setCookieValue(event.currentTarget.value)}
       />
-      <button
-        // instead of onClick use formAction to handle the form submission
-        formAction={async () => await createCookie(cookieValue)}
-      >
+      <button formAction={async () => await createCookie(cookieValue)}>
         Set Cookie
       </button>
     </form>
