@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { Product } from '../../migrations/00000-createTableProducts';
+import { Product } from '../migrations/00000-createTableProducts';
 import { sql } from './connect';
 
 export const getProductsInsecure = cache(async () => {
