@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
 
-export function getCookie(name) {
-  const cookie = cookies().get(name);
+export function getCookie(CookiePolicy) {
+  const cookie = cookies().get(CookiePolicy);
   if (!cookie) {
     return undefined;
   }

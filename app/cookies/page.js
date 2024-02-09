@@ -1,4 +1,4 @@
-import { getCookie } from '../../util/cookies';
+import { getCookie } from './cookies';
 import SetCookieForm from './SetCookieForm';
 
 export default function SetCookiePage() {

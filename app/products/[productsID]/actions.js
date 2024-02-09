@@ -1,8 +1,8 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
+import { getCookie } from '../../cookies/cookies';
 
 export async function adaptCookie(productID, quantity) {
   const productsQuantityCookie = getCookie('productsQuantity');

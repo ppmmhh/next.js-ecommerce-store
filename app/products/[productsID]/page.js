@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProduct } from '../../../database/products';
-import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
+import { getCookie } from '../../cookies/cookies';
 import { styles } from './productpage.module.scss';
 import SetQuantityCounter from './QuantityCounter';
 

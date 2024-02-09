@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 export function getLocalStorage(key) {
   // is testing if we are in the browser
   if (typeof window !== 'undefined') {
