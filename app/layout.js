@@ -1,6 +1,7 @@
 import './globals.scss';
 import Link from 'next/link';
 import React from 'react';
+import CookieBanner from './cookies/CookieBanner';
 
 export const metadata = {
   title: {
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
       <body>
         <header>
           <div>
-            {/* <add Cookies /> */}
+            <CookieBanner />
             <nav>
               <a href="/">
                 <img src="./images/logo.png" alt="Logo" className="logo" />
