@@ -37,7 +37,7 @@ export default function ProductPage(props) {
       <h1 className={styles.h1}>{singleProduct.title}</h1>
       <div className={styles.contentBoxGrid}>
         <div>
-          <div className={styles.textHighlight}>
+          <div className={styles.textBulletpoints}>
             <div>Name: {singleProduct.name}</div>
             <div>Origin: {singleProduct.origin}</div>
             <div>Price: EUR {singleProduct.price}</div>
