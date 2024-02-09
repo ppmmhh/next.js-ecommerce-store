@@ -23,7 +23,9 @@ export default function Header() {
         />
       </div>
       <div>
-        <h1 className="text-on-image">hier kommt eine slideshow</h1>
+        <h1 className="text-on-image">
+          there's gonna be a slideshow (eventually)
+        </h1>
       </div>
     </div>
   );
