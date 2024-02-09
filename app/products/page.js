@@ -1,20 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 import { getProductsInsecure } from '../../database/database';
 import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Products',
-  description: 'Chose your favorite apple',
+  description: 'Choose your favorite',
 };
 
-export default async function ProductPage() {
+export default async function ProductsPage() {
   const products = await getProductsInsecure();
 
   return (
     <div className={styles.sectionContainer}>
       <div>
-        <h1>Freshly picked for you:</h1>
+        <h1>Freshly picked for you</h1>
       </div>
       <div>
         <div className={styles.productContainer}>
@@ -28,10 +29,10 @@ export default async function ProductPage() {
                 >
                   <Image
                     src={product.image}
-                    width={300}
-                    height={300}
-                    alt={product.name}
-                    className={styles.productItem}
+                    width={250}
+                    height={250}
+                    alt={product.className}
+                    className={styles.productImage}
                   />
                   <div className={styles.productDetails}>
                     <div className={styles.headline}>
