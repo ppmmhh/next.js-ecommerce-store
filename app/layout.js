@@ -35,9 +35,9 @@ export default function RootLayout({ children }) {
               </Link>
 
               <div className="cart-icon">
-                <Link to="/cart">
+                <a href="/cart">
                   <img src="./images/shoppingcart.png" alt="shoppingcart" />
-                </Link>
+                </a>
               </div>
             </nav>
           </div>
