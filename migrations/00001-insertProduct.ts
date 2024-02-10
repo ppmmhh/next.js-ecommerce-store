@@ -76,7 +76,7 @@ export async function up(sql: Sql) {
           ${product.origin},
           ${product.image},
           ${product.price},
-          ${product.description},
+          ${product.description}
         )
     `;
   }
