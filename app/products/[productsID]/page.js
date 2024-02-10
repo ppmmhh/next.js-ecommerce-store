@@ -1,44 +1,42 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getProduct } from '../../../database/products';
-import { styles } from './productpage.module.scss';
+import { getProductInsecure } from '../../../database/products';
+import ProductButton from './actions';
 
-export function generateMetadata(props) {
-  const singleProduct = getProduct(Number(props.params.productID));
-
+export async function generateMetadata(props) {
+  const singleProduct = await getProductInsecure(props.params.productId);
   return {
-    title: singleProduct?.title,
+    title: singleProduct?.name || '',
   };
 }
 
-export default function ProductPage(props) {
-  const singleProduct = getProduct(Number(props.params.productID));
+export default async function ProductPage(props) {
+  const singleProduct = await getProductInsecure(props.params.productId);
+  // console.log('Check: ', getProduct(props.params.productId));
+
+  // console.log(singleProduct);
 
   if (!singleProduct) {
     notFound();
   }
 
   return (
-    <div className={styles.sectionContainer}>
-      <h1 className={styles.h1}>{singleProduct.title}</h1>
-      <div className={styles.contentBoxGrid}>
-        <div>
-          <div className={styles.textBulletpoints}>
-            <div>Name: {singleProduct.name}</div>
-            <div>Origin: {singleProduct.origin}</div>
-            <div>Price: EUR {singleProduct.price}</div>
-          </div>
-        </div>
-        <div>
-          <Image
-            src={singleProduct.image}
-            width={300}
-            height={300}
-            alt={singleProduct.title}
-            data-test-id="product-image"
-          />
-        </div>
-      </div>
+    <div>
+      <h1>{singleProduct.name}</h1>
+      <Image
+        src={`/images/${singleProduct.name.toLowerCase()}.png`}
+        alt={singleProduct.name}
+        width={300}
+        height={300}
+      />
+      <h2>{singleProduct.origin}</h2>
+      <br />
+      <h3>Price: EUR {singleProduct.price} M.</h3>
+      <br />
+      {singleProduct.description}
+      <br />
+      <br />
+      <ProductButton />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { adaptCookie } from './actions.js';
+import { adaptCookie } from './actions';
 import styles from './productpage.module.scss';
 
 export default function SetQuantityCounter(props) {

@@ -14,6 +14,7 @@ export const getProductsInsecure = cache(async () => {
 });
 
 export const getProductInsecure = cache(async (id: number) => {
+  // Postgres always returns an array
   const [product] = await sql<Product[]>`
     SELECT
       *

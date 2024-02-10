@@ -2,11 +2,10 @@ import { Sql } from 'postgres';
 
 export type Product = {
   id: number;
-  name: string;
-  origin: string;
-  image: string;
-  price: string;
-  description: string;
+  name: string | null;
+  origin: string | null;
+  price: string | null;
+  description: string | null;
 };
 
 export async function up(sql: Sql) {
@@ -15,8 +14,7 @@ export async function up(sql: Sql) {
       id integer PRIMARY key generated always AS identity,
       name varchar(40) NOT NULL,
       origin varchar(40) NOT NULL,
-      image varchar(50) NOT NULL,
-      price integer NOT NULL,
+      price varchar NOT NULL,
       description varchar NOT NULL
     )
   `;
