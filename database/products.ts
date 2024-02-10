@@ -2,7 +2,7 @@ import { cache } from 'react';
 import { Product } from '../migrations/00000-createTableProducts';
 import { sql } from './connect';
 
-export const getProductsInsecure = cache(async () => {
+export const getProducts = cache(async () => {
   const products = await sql<Product[]>`
     SELECT
       *
@@ -13,9 +13,8 @@ export const getProductsInsecure = cache(async () => {
   return products;
 });
 
-export const getProductInsecure = cache(async (id: number) => {
-  // Postgres always returns an array
-  const [product] = await sql<Product[]>`
+export const getProductById = cache(async (id: number) => {
+  const product = await sql<Product[]>`
     SELECT
       *
     FROM
@@ -24,5 +23,5 @@ export const getProductInsecure = cache(async (id: number) => {
       id = ${id}
   `;
 
-  return product;
+  return product[0]; // Assuming only one product is expected
 });
