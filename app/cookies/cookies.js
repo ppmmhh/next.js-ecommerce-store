@@ -1,9 +1,12 @@
 import { cookies } from 'next/headers';
 
-export function getCookie(CookiePolicy) {
-  const cookie = cookies().get(CookiePolicy);
-  if (!cookie) {
-    return undefined;
-  }
-  return cookie.value;
+// Optional chaining operator, if cookies().get('testCookie') is undefined return undefined
+
+export function getCookie(name) {
+  // const cookie = cookies().get(name);
+  // if (!cookie) {
+  //   return undefined;
+  // }
+  // return cookie.value;
+  return cookies().get(name)?.value;
 }
