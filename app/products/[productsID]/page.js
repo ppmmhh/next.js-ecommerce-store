@@ -1,42 +1,62 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import React from 'react';
 import { getProductInsecure } from '../../../database/products';
-import ProductButton from './actions';
+import { parseJson } from '../../../util/json';
+import { getCookie } from '../../cookies/cookies';
+import styles from './productpage.module.scss';
+import SetQuantityCounter from './QuantityCounter';
 
-export async function generateMetadata(props) {
-  const singleProduct = await getProductInsecure(props.params.productId);
+export function generateMetadata(props) {
+  const singleProduct = getProductInsecure(props.params.productID);
+
   return {
-    title: singleProduct?.name || '',
+    title: singleProduct?.name,
   };
 }
 
-export default async function ProductPage(props) {
-  const singleProduct = await getProductInsecure(props.params.productId);
-  // console.log('Check: ', getProduct(props.params.productId));
+export default async function productPage(props) {
+  const singleProduct = await getProductInsecure(props.params.productID);
 
-  // console.log(singleProduct);
+  // get cookie and parse it
+  const productsQuantityCookie = getCookie('quantityCookie');
+
+  const productsQuantity = !productsQuantityCookie
+    ? []
+    : parseJson(productsQuantityCookie);
+
+  const quantitiesToDisplay = productsQuantity.find((productQuantity) => {
+    return productQuantity.id === singleProduct.id;
+  });
 
   if (!singleProduct) {
     notFound();
   }
-
   return (
-    <div>
-      <h1>{singleProduct.name}</h1>
-      <Image
-        src={`/images/${singleProduct.name.toLowerCase()}.png`}
-        alt={singleProduct.name}
-        width={300}
-        height={300}
-      />
-      <h2>{singleProduct.origin}</h2>
-      <br />
-      <h3>Price: EUR {singleProduct.price} M.</h3>
-      <br />
-      {singleProduct.description}
-      <br />
-      <br />
-      <ProductButton />
+    <div className={styles.sectionContainer}>
+      <h1 className={styles.h1}>{singleProduct.name}</h1>
+      <div className={styles.contentBoxGrid}>
+        <div>
+          <div className={styles.textHighlight}>
+            <div>Origin: {singleProduct.origin}</div>
+            <div>Price: EUR {singleProduct.price}</div>
+          </div>
+          <div className={styles.description}>{singleProduct.description}</div>
+        </div>
+        <div>
+          <Image
+            src={singleProduct.image}
+            width={499}
+            height={494}
+            alt={singleProduct.name}
+            data-test-id="product-image"
+          />
+        </div>
+      </div>
+      <div className={styles.buyNowWrapper}>
+        <div>{quantitiesToDisplay?.quantity}</div>
+        <SetQuantityCounter productId={singleProduct.id} />
+      </div>
     </div>
   );
 }
