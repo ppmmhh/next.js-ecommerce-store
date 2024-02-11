@@ -50,12 +50,12 @@ Storability: until April or even longer`,
     image: `/images/pinova.jpeg`,
     price: 39,
     description: `
-Color: Yellow base color, orange-red blush
-Taste: Sweet-tart, aromatic, and spicy
-Shape: Small to medium-sized, round
-Ripeness: Early to mid-October
-Use: Excellent for snacking, also suitable for cooking and baking
-Storability: Chilled, lasts until about March`,
+    Color: Yellow base color, orange-red blush
+    Taste: Sweet-tart, aromatic, and spicy
+    Shape: Small to medium-sized, round
+    Ripeness: Early to mid-October
+    Use: Excellent for snacking, also suitable for cooking and baking
+    Storability: Chilled, lasts until about March`,
   },
 ];
 
