@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { parseJson } from '../../../util/json';
 import { getCookie } from '../../cookies/cookies';
 
-export async function adaptCookie(productID, quantity) {
+export async function addToCart(productID, quantity) {
   const productsQuantityCookie = getCookie('cart');
 
   const productsQuantity = !productsQuantityCookie
