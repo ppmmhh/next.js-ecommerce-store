@@ -1,9 +1,26 @@
+import 'server-only';
 import { cache } from 'react';
-import { Product } from '../migrations/00000-createTableProducts';
 import { sql } from './connect';
 
-export const getProducts = cache(async () => {
-  const products = await sql<Product[]>`
+type Product = {
+  id: number;
+  name: string | null;
+  origin: string | null;
+  price: string | null;
+  description: string | null;
+};
+
+export const getProductsInsecure = cache(async () => {
+  const products = await sql<
+    {
+      id: number;
+      name: string;
+      origin: string;
+      image: string;
+      price: number;
+      description: string;
+    }[]
+  >`
     SELECT
       *
     FROM
@@ -13,15 +30,22 @@ export const getProducts = cache(async () => {
   return products;
 });
 
-export const getProductById = cache(async (id: number) => {
-  const product = await sql<Product[]>`
+export const getProductInsecure = cache(async () => {
+  const [product] = await sql<
+    {
+      id: number;
+      name: string;
+      origin: string;
+      image: string;
+      price: number;
+      description: string;
+    }[]
+  >`
     SELECT
       *
     FROM
       products
-    WHERE
-      id = ${id}
   `;
 
-  return product[0]; // Assuming only one product is expected
+  return product;
 });
