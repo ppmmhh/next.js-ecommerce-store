@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { adaptCookie } from './actions';
+import { addToCart } from './actions';
 import styles from './productpage.module.scss';
 
 export default function SetQuantityCounter(props) {
@@ -21,7 +21,7 @@ export default function SetQuantityCounter(props) {
           <option value="4">4</option>
         </select>
         <button
-          formAction={async () => await adaptCookie(props.productID, quantity)}
+          formAction={async () => await addToCart(props.productID, quantity)}
         >
           Buy Now
         </button>
