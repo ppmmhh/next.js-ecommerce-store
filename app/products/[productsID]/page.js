@@ -18,7 +18,6 @@ export function generateMetadata(props) {
 export default async function productPage(props) {
   const singleProduct = await getProductInsecure(props.params.productID);
 
-  // get cookie and parse it
   const productsQuantityCookie = getCookie('quantityCookie');
 
   const productsQuantity = !productsQuantityCookie
