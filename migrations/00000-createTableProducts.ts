@@ -2,10 +2,11 @@ import { Sql } from 'postgres';
 
 export type Product = {
   id: number;
-  name: string | null;
-  origin: string | null;
-  price: string | null;
-  description: string | null;
+  name: string;
+  origin: string;
+  image: string;
+  price: string;
+  description: string;
 };
 
 export async function up(sql: Sql) {
