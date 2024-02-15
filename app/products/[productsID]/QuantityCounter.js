@@ -1,11 +1,14 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { addToCart } from './actions';
 import styles from './productpage.module.scss';
 
 export default function SetQuantityCounter(props) {
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
+
   return (
     <div>
       <form>
@@ -28,7 +31,10 @@ export default function SetQuantityCounter(props) {
         </select>
         <button
           className={styles.button}
-          formAction={async () => await addToCart(props.productID, quantity)}
+          formAction={async () => {
+            router.refresh();
+            await addToCart(props.productID, quantity);
+          }}
         >
           Buy Now
         </button>
