@@ -1,0 +1,97 @@
+.pageContainer {
+  display: flex;
+  width: 1140px;
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headline {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 100%;
+  margin-right: 80px;
+  text-align: left;
+
+  @media (max-width: 600px) {
+    width: 50%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.orderSummary {
+  width: 40%;
+  margin-left: 80px;
+  padding-left: 30px;
+}
+
+.orderContainer {
+  border: 1px solid var(--secondary-color);
+  border-radius: 15px;
+  padding: 0 20px;
+
+  @media (max-width: 600px) {
+    width: 50%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.smallContainer {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+
+  div {
+    width: 47%;
+  }
+}
+
+.inputField {
+  border: 1px solid var(--secondary-color);
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-family: var(--font-family-text);
+  background-color: white;
+  margin: 10px;
+  flex: 1;
+  width: 100%;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  margin-right: -10px;
+  text-align: right;
+}
+
+.workshopDetails {
+  font-family: var(--font-family-text);
+  flex-grow: 1;
+  @media (max-width: 600px) {
+    width: 20em;
+  }
+}
+
+.summaryWrapper {
+  padding: 20px;
+}
+
+.totalPrice {
+  font-family: var(--font-family-text);
+  color: var(--secondary-color);
+  font-size: var(--h2-size);
+  text-align: right;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  @media (max-width: 600px) {
+    width: 20em;
+  }
+}
+
+.text {
+  font-family: var(--font-family-text);
+}
