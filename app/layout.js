@@ -1,6 +1,7 @@
 import './globals.scss';
 import Link from 'next/link';
 import React from 'react';
+import CartBadge from './cart/CartBadge';
 
 export const metadata = {
   title: {
@@ -33,8 +34,9 @@ export default function RootLayout({ children }) {
                 About
               </Link>
 
-              <div className="cart-icon">
+              <div className="cart-icon" data-test-id="cart-link">
                 <a href="/cart">
+                  <CartBadge />
                   <img src="./images/shoppingcart.png" alt="shoppingcart" />
                 </a>
               </div>
@@ -43,7 +45,7 @@ export default function RootLayout({ children }) {
         </header>
         <main>{children}</main>
 
-        <footer>Hello Footer</footer>
+        <footer>c The Apple Store 2024</footer>
       </body>
     </html>
   );
