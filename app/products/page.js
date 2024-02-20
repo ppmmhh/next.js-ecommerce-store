@@ -6,7 +6,7 @@ import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Products',
-  description: 'Choose from our variety of products',
+  description: 'Freshly Picked for You',
 };
 
 export default async function ProductsPage() {
@@ -15,7 +15,7 @@ export default async function ProductsPage() {
   return (
     <div className={styles.sectionContainer}>
       <div>
-        <h1>Freshly picked for you</h1>
+        <h1>Freshly Picked for You</h1>
       </div>
       <div>
         <div className={styles.productContainer}>
@@ -29,8 +29,8 @@ export default async function ProductsPage() {
                 >
                   <Image
                     src={product.image}
-                    width={299}
-                    height={294}
+                    width={250}
+                    height={300}
                     alt={product.name}
                     className={styles.productImage}
                   />
@@ -40,7 +40,8 @@ export default async function ProductsPage() {
                     </div>
                     <div>Origin: {product.origin}</div>
                     <div data-test-id="product-price">
-                      Price: EUR {product.price}
+                      Price: EUR{' '}
+                      <span data-test-id="product-price">{product.price}</span>
                     </div>
                   </div>
                 </Link>

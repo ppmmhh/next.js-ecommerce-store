@@ -1,37 +1,20 @@
-import 'server-only';
 import { cache } from 'react';
+import { Product } from '../migrations/00000-createTableProducts';
 import { sql } from './connect';
 
 export const getProductsInsecure = cache(async () => {
-  const products = await sql<
-    {
-      id: number;
-      name: string;
-      origin: string;
-      image: string;
-      price: number;
-      description: string;
-    }[]
-  >`
+  const products = await sql<Product[]>`
     SELECT
       *
     FROM
       products
   `;
+
   return products;
 });
 
 export const getProductInsecure = cache(async (id: number) => {
-  const [product] = await sql<
-    {
-      id: number;
-      name: string;
-      origin: string;
-      image: string;
-      price: number;
-      description: string;
-    }[]
-  >`
+  const [product] = await sql<Product[]>`
     SELECT
       *
     FROM
@@ -39,5 +22,6 @@ export const getProductInsecure = cache(async (id: number) => {
     WHERE
       id = ${id}
   `;
+
   return product;
 });

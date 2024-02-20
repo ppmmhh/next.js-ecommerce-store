@@ -1,5 +1,5 @@
-import SetQuantityCounter from '../products/[productsID]/QuantityCounter';
-import { getCookie } from './cookies';
+import { getCookie } from '../../util/cookies';
+import SetQuantityCounter from '../products/[productsID]/SetQuantityCounter';
 
 export default function SetCookiePage() {
   const testCookieValue = getCookie('testCookie');

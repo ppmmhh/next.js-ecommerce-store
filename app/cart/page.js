@@ -2,22 +2,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { getProductsInsecure } from '../../database/products';
+import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import { getCookie } from '../cookies/cookies';
+import ChangeQuantity from './ChangeQuantity.tsx';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
 export const metadata = {
   title: { default: 'Cart' },
-  description: 'All of the apples in the basket',
+  description: 'This page is showing all of the apples in the basket',
 };
 
 export default async function CartPage() {
   const products = await getProductsInsecure();
 
+  // get the cookies
   const cookie = getCookie('cart');
   const productCookies = !cookie ? [] : parseJson(cookie);
 
+  // check which workshops are in cookies
   const productsWithCookies = products.map((product) => {
     const productFromCookies = productCookies.find(
       (productCookie) => product.id === productCookie.id,
@@ -25,6 +28,7 @@ export default async function CartPage() {
     return { ...product, quantity: productFromCookies?.quantity };
   });
 
+  // new variable with all products with quantity
   const productsInCart = productsWithCookies.filter(
     (product) => product.quantity,
   );
@@ -41,16 +45,16 @@ export default async function CartPage() {
       </div>
       <div className={styles.productContainer}>
         {productsInCart.map((product) => {
+          const productSubTotal = () => {
+            return Number(product.quantity) * Number(product.price);
+          };
           return (
             <div
               key={`products-${product.id}`}
-              data-test-id={`cart-product-${product.id}`}
+              data-test-id={`cart-product-${Number(product.id)}`}
               className={styles.productItem}
             >
-              <Link
-                href={`/products/${product.id}`}
-                data-test-id={`product-${product.id}`}
-              >
+              <Link href={`/products/${product.id}`}>
                 <Image
                   src={product.image}
                   width={250}
@@ -64,16 +68,15 @@ export default async function CartPage() {
                   <h2>{product.name}</h2>
                 </div>
                 <div>
-                  <div>Origin: {product.origin}</div>
                   <div data-test-id="product-price">
                     Price: EUR {product.price}
                   </div>
-                  <div data-test-id={`cart-product-quantity-${product.id}`}>
-                    Quantity: {product.quantity}
+                  <div>
+                    <ChangeQuantity product={product} />
                   </div>
-                  <div>Total: EUR {product.price * product.quantity}</div>
+                  <div>Total Basket of Apples: EUR {productSubTotal()}</div>
                 </div>
-                <div data-test-id={`cart-product-remove-${product.id}`}>
+                <div>
                   <RemoveButton product={product} />
                 </div>
                 <br />
@@ -85,8 +88,8 @@ export default async function CartPage() {
       </div>
       <div className={styles.line} />
       <div className={styles.sectionCheckout}>
-        <div className={styles.totalPrice} data-test-id="cart-total">
-          Total: EUR {totalPrice}
+        <div className={styles.totalPrice}>
+          Total: EUR <span data-test-id="cart-total">{totalPrice}</span>
         </div>
         <div>
           <Link

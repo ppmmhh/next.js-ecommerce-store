@@ -2,13 +2,13 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { getProductInsecure } from '../../../database/products';
+import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
-import { getCookie } from '../../cookies/cookies';
 import styles from './productpage.module.scss';
-import SetQuantityCounter from './QuantityCounter';
+import SetQuantityCounter from './SetQuantityCounter.tsx';
 
-export function generateMetadata(props) {
-  const singleProduct = getProductInsecure(props.params.productID);
+export async function generateMetadata(props) {
+  const singleProduct = await getProductInsecure(props.params.productID);
 
   return {
     title: singleProduct?.name,
@@ -16,8 +16,15 @@ export function generateMetadata(props) {
 }
 
 export default async function productPage(props) {
-  const singleProduct = await getProductInsecure(props.params.productID);
+  const singleProduct = await getProductInsecure(
+    Number(props.params.productID),
+  );
 
+  if (!singleProduct) {
+    notFound();
+  }
+
+  // get cookie and parse it
   const productsQuantityCookie = getCookie('quantityCookie');
 
   const productsQuantity = !productsQuantityCookie
@@ -28,9 +35,6 @@ export default async function productPage(props) {
     return productQuantity.id === singleProduct.id;
   });
 
-  if (!singleProduct) {
-    notFound();
-  }
   return (
     <div className={styles.sectionContainer}>
       <h1 className={styles.h1}>{singleProduct.name}</h1>
@@ -38,15 +42,19 @@ export default async function productPage(props) {
         <div>
           <div className={styles.textHighlight}>
             <div>Origin: {singleProduct.origin}</div>
-            <div>Price: EUR {singleProduct.price}</div>
+            <div>
+              Price:{' '}
+              <span data-test-id="product-price">{singleProduct.price}</span>{' '}
+              EUR
+            </div>
           </div>
           <div className={styles.description}>{singleProduct.description}</div>
         </div>
         <div>
           <Image
             src={singleProduct.image}
-            width={499}
-            height={494}
+            width={250}
+            height={300}
             alt={singleProduct.name}
             data-test-id="product-image"
           />
@@ -54,7 +62,7 @@ export default async function productPage(props) {
       </div>
       <div className={styles.buyNowWrapper}>
         <div>{quantitiesToDisplay?.quantity}</div>
-        <SetQuantityCounter productId={singleProduct.id} />
+        <SetQuantityCounter productID={singleProduct.id} />
       </div>
     </div>
   );
