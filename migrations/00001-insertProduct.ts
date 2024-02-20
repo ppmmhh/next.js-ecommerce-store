@@ -15,6 +15,7 @@ Ripeness: End of August
 Use: very attractive in appearance, therefore great for baking
 Storability: until December`,
   },
+
   {
     id: 2,
     name: 'Kronprinz Rudolf',
@@ -29,6 +30,7 @@ Ripeness: October-November
 Use: raw or as applesauce
 Storability: until February`,
   },
+
   {
     id: 3,
     name: 'Granny Smith',
@@ -43,6 +45,7 @@ Ripeness: End of October
 Use: excellent as a snack or in salads; for cooking and baking (does not turn mushy when baked
 Storability: until April or even longer`,
   },
+
   {
     id: 4,
     name: 'Pinova',
