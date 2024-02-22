@@ -7,9 +7,7 @@ export default function Header() {
     <div>
       <img className="heroimages" src="/images/apple02.jpeg" alt="apples" />
       <div>
-        <h1 className="text-on-image">
-          there's gonna be a slideshow (eventually)
-        </h1>
+        <h1 className="text-on-image">munch munch crunch crunch</h1>
       </div>
     </div>
   );
