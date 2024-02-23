@@ -13,14 +13,12 @@ export const getProductsInsecure = cache(async () => {
   return products;
 });
 
-export const getProductInsecure = cache(async (id: number) => {
+export const getProductInsecure = cache(async () => {
   const [product] = await sql<Product[]>`
     SELECT
       *
     FROM
       products
-    WHERE
-      id = ${id}
   `;
 
   return product;

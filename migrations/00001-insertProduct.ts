@@ -87,7 +87,6 @@ export async function up(sql: Sql) {
 
 export async function down(sql: Sql) {
   for (const product of products) {
-    console.log(`Inserting product: ${product.name}, Price: ${product.price}`);
     await sql`
       DELETE FROM products
       WHERE
