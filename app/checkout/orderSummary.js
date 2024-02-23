@@ -32,7 +32,7 @@ export default async function OrderSummary() {
   return (
     <div className={styles.orderSummary}>
       <div className={styles.orderContainer}>
-        <h2 className={styles.headline}>Your Order Summary:</h2>
+        <h2 className={styles.headline}>You Picked:</h2>
         <div>
           {productsInCart.map((product) => {
             return (

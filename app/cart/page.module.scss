@@ -78,16 +78,10 @@
   font-family: var(--font-mono);
   color: var(--primary-color);
   font-size: var(--h2-size);
-  text-align: right;
+  text-align: center;
   @media (max-width: 600px) {
     width: 20em;
   }
-}
-
-.line {
-  display: block;
-  border: 0.5px solid var(--primary-color);
-  margin-bottom: 30px;
 }
 
 .checkoutButton {
@@ -111,30 +105,18 @@
   padding: 4px;
   color: var(--color-button);
   background-color: transparent;
-  border: 0.5px solid var(--color-button);
   display: inline-block;
   font-size: 1rem;
   margin-left: 14px;
-
-  &:hover {
-    border: 0.5px solid var(--color-button);
-    background-color: white;
-  }
 }
 
 .changeQuantityMinus {
   padding: 4px;
   color: var(--color-button);
   background-color: transparent;
-  border: 0.5px solid var(--color-button);
   display: inline-block;
   font-size: 1rem;
   margin-left: 4px;
-
-  &:hover {
-    border: 0.5px solid var(--color-button);
-    background-color: white;
-  }
 }
 
 .badge {
