@@ -41,7 +41,7 @@ export default function SetQuantityForm(props: Props) {
             await addToCart(props.productID, Number(quantity));
           }}
         >
-          Add To Cart
+          Buy Now
         </button>
       </form>
     </div>
