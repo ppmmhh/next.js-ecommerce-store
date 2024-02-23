@@ -168,7 +168,7 @@ export default function CheckoutPage() {
               </label>
             </div>
           </div>
-          <div className={styles.text}>*Required!</div>
+          <div className={styles.text}>*Required</div>
         </div>
         <div className={styles.buttonContainer}>
           <button
