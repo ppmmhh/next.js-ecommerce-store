@@ -21,7 +21,7 @@ export default function CheckoutPage() {
   return (
     <div>
       <div className={styles.form}>
-        <h2 className={styles.headline}>Contact Information</h2>
+        <h2 className={styles.headline}>Personal:</h2>
         <div className={styles.smallContainer}>
           <div>
             <label aria-label="First Name">
@@ -56,7 +56,7 @@ export default function CheckoutPage() {
               required
               name="email"
               data-test-id="checkout-email"
-              placeholder="your@email.com*"
+              placeholder="enteryour@email.com*"
               value={email}
               className={styles.inputField}
               onChange={(event) => setEmail(event.currentTarget.value)}
@@ -64,48 +64,49 @@ export default function CheckoutPage() {
           </label>
         </div>
         <div>
-          <h2 className={styles.headline}>Shipping Information</h2>
+          <h2 className={styles.headline}>Shipping:</h2>
           <div>
             <label aria-label="Address">
               <input
                 required
                 name="address"
                 data-test-id="checkout-address"
-                placeholder="Address*"
+                placeholder="Street and Number*"
                 value={address}
                 className={styles.inputField}
                 onChange={(event) => setAddress(event.currentTarget.value)}
               />
             </label>
           </div>
-          <div className={styles.smallContainer}>
-            <div>
-              <label aria-label="City">
-                <input
-                  required
-                  name="city"
-                  data-test-id="checkout-city"
-                  placeholder="City*"
-                  value={city}
-                  className={styles.inputField}
-                  onChange={(event) => setCity(event.currentTarget.value)}
-                />
-              </label>
-            </div>
-            <div>
-              <label aria-label="Postal Code">
-                <input
-                  required
-                  name="postalCode"
-                  data-test-id="checkout-postal-code"
-                  placeholder="Postal Code*"
-                  value={postalCode}
-                  className={styles.inputField}
-                  onChange={(event) => setPostalCode(event.currentTarget.value)}
-                />
-              </label>
-            </div>
+          <div>
+            <label aria-label="Postal Code">
+              <input
+                required
+                name="postalCode"
+                data-test-id="checkout-postal-code"
+                placeholder="Postal Code*"
+                value={postalCode}
+                className={styles.inputField}
+                onChange={(event) => setPostalCode(event.currentTarget.value)}
+              />
+            </label>
           </div>
+        </div>
+        <div className={styles.smallContainer}>
+          <div>
+            <label aria-label="City">
+              <input
+                required
+                name="city"
+                data-test-id="checkout-city"
+                placeholder="City*"
+                value={city}
+                className={styles.inputField}
+                onChange={(event) => setCity(event.currentTarget.value)}
+              />
+            </label>
+          </div>
+
           <div>
             <label aria-label="Country">
               <input
@@ -121,7 +122,7 @@ export default function CheckoutPage() {
           </div>
         </div>
         <div>
-          <h2 className={styles.headline}>Payment Information</h2>
+          <h2 className={styles.headline}>Payment:</h2>
           <div>
             <label aria-label="Credit Card Number">
               <input
@@ -167,7 +168,7 @@ export default function CheckoutPage() {
               </label>
             </div>
           </div>
-          <div className={styles.text}>* All input fields are required!</div>
+          <div className={styles.text}>*Required!</div>
         </div>
         <div className={styles.buttonContainer}>
           <button
@@ -190,7 +191,7 @@ export default function CheckoutPage() {
               securityCode.length === 0
             }
           >
-            Confirm Order
+            Buy Now
           </button>
         </div>
       </div>
