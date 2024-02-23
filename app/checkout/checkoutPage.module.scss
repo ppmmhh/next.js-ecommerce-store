@@ -16,12 +16,6 @@
   width: 100%;
   margin-right: 80px;
   text-align: left;
-
-  @media (max-width: 600px) {
-    width: 50%;
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }
 
 .orderSummary {
@@ -33,12 +27,6 @@
 .orderContainer {
   border: 1px solid var(--secondary-color);
   padding: 0 20px;
-
-  @media (max-width: 600px) {
-    width: 50%;
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }
 
 .smallContainer {
@@ -52,9 +40,9 @@
 }
 
 .inputField {
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--color-button);
   padding: 10px 15px;
-  font-family: var(--font-family-text);
+  font-family: var(--font-mono);
   background-color: white;
   margin: 10px;
   flex: 1;
@@ -67,12 +55,9 @@
   text-align: right;
 }
 
-.workshopDetails {
-  font-family: var(--font-family-text);
+.productDetails {
+  font-family: var(--font-mono);
   flex-grow: 1;
-  @media (max-width: 600px) {
-    width: 20em;
-  }
 }
 
 .summaryWrapper {
@@ -80,8 +65,8 @@
 }
 
 .totalPrice {
-  font-family: var(--font-family-text);
-  color: var(--secondary-color);
+  font-family: var(--font-mono);
+  color: var(--primary-color);
   font-size: var(--h2-size);
   text-align: right;
   margin-top: 30px;
@@ -92,5 +77,5 @@
 }
 
 .text {
-  font-family: var(--font-family-text);
+  font-family: var(--font-mono);
 }
