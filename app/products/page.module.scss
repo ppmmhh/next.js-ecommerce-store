@@ -47,17 +47,8 @@
   height: 394;
   margin-right: 20px;
   position: inherit;
-
-  @media (max-width: 600px) {
-    position: auto;
-    width: auto;
-    margin-right: 0;
-  }
 }
 
 .productDetails {
   font-family: var(--font-mono);
-  @media (max-width: 600px) {
-    width: 30em;
-  }
 }
