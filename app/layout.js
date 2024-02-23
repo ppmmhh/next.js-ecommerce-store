@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body>
         <header>
           <div>
-            <nav>
+            <nav className="nav">
               <a href="/">
                 <img src="./images/logo.png" alt="Logo" className="logo" />
               </a>
@@ -26,7 +26,11 @@ export default function RootLayout({ children }) {
                 Home
               </Link>
 
-              <Link href="/products" className="navText">
+              <Link
+                href="/products"
+                className="navText"
+                data-test-id="products-link"
+              >
                 Products
               </Link>
 
@@ -37,7 +41,12 @@ export default function RootLayout({ children }) {
               <div className="cart-icon" data-test-id="cart-link">
                 <a href="/cart">
                   <CartBadge />
-                  <img src="./images/shoppingcart.png" alt="shoppingcart" />
+                  <img
+                    src="./images/shoppingcart.png"
+                    alt="shoppingcart"
+                    height={30}
+                    width={30}
+                  />
                 </a>
               </div>
             </nav>
@@ -45,7 +54,7 @@ export default function RootLayout({ children }) {
         </header>
         <main>{children}</main>
 
-        <footer>c The Apple Store 2024</footer>
+        <footer>© The Apple Store 2024</footer>
       </body>
     </html>
   );
