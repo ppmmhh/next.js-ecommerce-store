@@ -41,7 +41,7 @@ export default async function CartPage() {
   return (
     <div className={styles.sectionContainer}>
       <div>
-        <h1>Your Cart:</h1>
+        <h1>You Picked:</h1>
       </div>
       <div className={styles.productContainer}>
         {productsInCart.map((product) => {
@@ -74,7 +74,7 @@ export default async function CartPage() {
                   <div>
                     <ChangeQuantity product={product} />
                   </div>
-                  <div>Total Basket of Apples: EUR {productSubTotal()}</div>
+                  <div>Subtotal: EUR {productSubTotal()}</div>
                 </div>
                 <div>
                   <RemoveButton product={product} />
@@ -86,7 +86,6 @@ export default async function CartPage() {
           );
         })}
       </div>
-      <div className={styles.line} />
       <div className={styles.sectionCheckout}>
         <div className={styles.totalPrice}>
           Total: EUR <span data-test-id="cart-total">{totalPrice}</span>
