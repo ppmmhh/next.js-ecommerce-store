@@ -32,7 +32,7 @@ export default async function OrderSummary() {
   return (
     <div className={styles.orderSummary}>
       <div className={styles.orderContainer}>
-        <h2 className={styles.headline}>Your Order</h2>
+        <h2 className={styles.headline}>Your Order Summary:</h2>
         <div>
           {productsInCart.map((product) => {
             return (
@@ -48,7 +48,7 @@ export default async function OrderSummary() {
                     <div className={styles.headline}>
                       <h2>{product.name}</h2>
                     </div>
-                    <div className={styles.workshopDetails}>
+                    <div className={styles.productDetails}>
                       <div data-test-id="product-price">
                         Price: EUR {product.price}
                       </div>
