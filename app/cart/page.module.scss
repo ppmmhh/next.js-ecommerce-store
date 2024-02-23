@@ -1,4 +1,5 @@
 .sectionContainer {
+  font-family: var(--font-mono);
   margin-left: auto;
   margin-right: auto;
   padding: 70px;
@@ -60,7 +61,7 @@
 .removeButton {
   background-color: transparent;
   border: 1px solid var(--color-button);
-  color: var(--secondary-color);
+  color: var(--color-button);
   margin-top: 30px;
   &:hover {
     cursor: pointer;
@@ -74,8 +75,8 @@
 }
 
 .totalPrice {
-  font-family: var(--font-family-text);
-  color: var(--secondary-color);
+  font-family: var(--font-mono);
+  color: var(--primary-color);
   font-size: var(--h2-size);
   text-align: right;
   @media (max-width: 600px) {
@@ -85,14 +86,13 @@
 
 .line {
   display: block;
-  border: 1px solid var(--secondary-color);
+  border: 0.5px solid var(--primary-color);
   margin-bottom: 30px;
 }
 
 .checkoutButton {
   background-color: var(--color-button);
   color: white;
-  border-radius: 15px;
   padding: 10px 15px;
   border: 2px solid var(--color-button);
   font-family: var(--font-family-text);
@@ -105,4 +105,47 @@
     cursor: pointer;
     color: var(--color-button);
   }
+}
+
+.changeQuantityPlus {
+  padding: 4px;
+  color: var(--color-button);
+  background-color: transparent;
+  border: 0.5px solid var(--color-button);
+  display: inline-block;
+  font-size: 1rem;
+  margin-left: 14px;
+
+  &:hover {
+    border: 0.5px solid var(--color-button);
+    background-color: white;
+  }
+}
+
+.changeQuantityMinus {
+  padding: 4px;
+  color: var(--color-button);
+  background-color: transparent;
+  border: 0.5px solid var(--color-button);
+  display: inline-block;
+  font-size: 1rem;
+  margin-left: 4px;
+
+  &:hover {
+    border: 0.5px solid var(--color-button);
+    background-color: white;
+  }
+}
+
+.badge {
+  background-color: var(--primary-color);
+  font-family: var(--font-family-text);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 60%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  transform: translate(80%, 50%);
 }

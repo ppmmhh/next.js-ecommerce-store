@@ -58,7 +58,7 @@ export default async function CartPage() {
                 <Image
                   src={product.image}
                   width={250}
-                  height={300}
+                  height={250}
                   alt={product.name}
                   className={styles.productImage}
                 />
