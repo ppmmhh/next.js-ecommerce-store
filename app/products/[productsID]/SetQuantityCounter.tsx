@@ -6,7 +6,7 @@ import { addToCart } from './actions';
 import styles from './productpage.module.scss';
 
 type Props = {
-  productID: number;
+  productId: number;
 };
 
 export default function SetQuantityForm(props: Props) {
@@ -38,7 +38,7 @@ export default function SetQuantityForm(props: Props) {
           data-test-id="product-add-to-cart"
           formAction={async () => {
             router.refresh();
-            await addToCart(props.productID, Number(quantity));
+            await addToCart(props.productId, Number(quantity));
           }}
         >
           Buy Now

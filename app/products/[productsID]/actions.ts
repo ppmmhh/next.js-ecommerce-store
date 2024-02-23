@@ -9,7 +9,7 @@ export type ProductCookie = {
   quantity: number;
 };
 
-export async function addToCart(productID: number, quantity: number) {
+export async function addToCart(productId: number, quantity: number) {
   const productsQuantityCookie = getCookie('cart');
 
   const productsQuantity = !productsQuantityCookie
@@ -18,12 +18,12 @@ export async function addToCart(productID: number, quantity: number) {
 
   const productToAdd = productsQuantity.find(
     (productQuantity: ProductCookie) => {
-      return productQuantity.id === productID;
+      return productQuantity.id === productId;
     },
   );
 
   if (!productToAdd) {
-    productsQuantity.push({ id: productID, quantity: quantity });
+    productsQuantity.push({ id: productId, quantity: quantity });
   } else {
     productToAdd.quantity = Number(productToAdd.quantity) + Number(quantity);
   }

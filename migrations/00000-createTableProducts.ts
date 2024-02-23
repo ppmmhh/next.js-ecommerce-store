@@ -15,6 +15,7 @@ export async function up(sql: Sql) {
       id integer PRIMARY key generated always AS identity,
       name varchar(40) NOT NULL,
       origin varchar(40) NOT NULL,
+      image varchar NOT NULL,
       price integer NOT NULL,
       description varchar NOT NULL
     )

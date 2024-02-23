@@ -8,7 +8,7 @@ import styles from './productpage.module.scss';
 import SetQuantityCounter from './SetQuantityCounter.tsx';
 
 export async function generateMetadata(props) {
-  const singleProduct = await getProductInsecure(props.params.productID);
+  const singleProduct = await getProductInsecure(props.params.productId);
 
   return {
     title: singleProduct?.name,
@@ -17,7 +17,7 @@ export async function generateMetadata(props) {
 
 export default async function productPage(props) {
   const singleProduct = await getProductInsecure(
-    Number(props.params.productID),
+    Number(props.params.productId),
   );
 
   if (!singleProduct) {
@@ -62,7 +62,7 @@ export default async function productPage(props) {
       </div>
       <div className={styles.buyNowWrapper}>
         <div>{quantitiesToDisplay?.quantity}</div>
-        <SetQuantityCounter productID={singleProduct.id} />
+        <SetQuantityCounter productId={singleProduct.id} />
       </div>
     </div>
   );

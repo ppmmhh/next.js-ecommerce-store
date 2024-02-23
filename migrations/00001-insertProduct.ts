@@ -53,12 +53,12 @@ Storability: until April or even longer`,
     image: `/images/pinova.jpeg`,
     price: 39,
     description: `
-    Color: Yellow base color, orange-red blush
-    Taste: Sweet-tart, aromatic, and spicy
-    Shape: Small to medium-sized, round
-    Ripeness: Early to mid-October
-    Use: Excellent for snacking, also suitable for cooking and baking
-    Storability: Chilled, lasts until about March`,
+Color: Yellow base color, orange-red blush
+Taste: Sweet-tart, aromatic, and spicy
+Shape: Small to medium-sized, round
+Ripeness: Early to mid-October
+Use: Excellent for snacking, also suitable for cooking and baking
+Storability: Chilled, lasts until about March`,
   },
 ];
 
@@ -87,6 +87,7 @@ export async function up(sql: Sql) {
 
 export async function down(sql: Sql) {
   for (const product of products) {
+    console.log(`Inserting product: ${product.name}, Price: ${product.price}`);
     await sql`
       DELETE FROM products
       WHERE
