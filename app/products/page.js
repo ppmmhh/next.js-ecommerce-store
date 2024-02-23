@@ -29,7 +29,7 @@ export default async function ProductsPage() {
                 >
                   <Image
                     src={product.image}
-                    width={250}
+                    width={300}
                     height={300}
                     alt={product.name}
                     className={styles.productImage}
