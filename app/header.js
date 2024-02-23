@@ -5,9 +5,13 @@ import React from 'react';
 export default function Header() {
   return (
     <div>
-      <img className="heroimages" src="/images/apple02.jpeg" alt="apples" />
-      <div>
-        <h1 className="text-on-image">munch munch crunch crunch</h1>
+      <div className="container">
+        <div className="image-wrapper">
+          <img src="/images/applehero1.jpeg" alt="apples" />
+        </div>
+        <div className="image-wrapper">
+          <img src="/images/applehero2.jpeg" alt="bowl of apples" />
+        </div>
       </div>
     </div>
   );
