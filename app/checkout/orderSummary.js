@@ -55,7 +55,9 @@ export default async function OrderSummary() {
                       <div data-test-id={`cart-product-quantity-${product.id}`}>
                         Quantity: {product.quantity}
                       </div>
-                      <div>Total: EUR {product.price * product.quantity}</div>
+                      <div>
+                        Subtotal: EUR {product.price * product.quantity}
+                      </div>
                     </div>
                   </div>
                 </Link>
